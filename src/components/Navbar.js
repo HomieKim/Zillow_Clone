@@ -21,12 +21,12 @@ const SytleInnerContainer = styled.div`
 const StyleList = styled.ul`
   list-style: none;
   display : flex;
-
+  margin : 0;
   li {
     font-size : 1.1em;
-    margin : auto;
     padding : 1.3rem;
     color : #393e46;
+    cursor: pointer;
   }
 
 `

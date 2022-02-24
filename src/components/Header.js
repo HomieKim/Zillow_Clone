@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Navbar from "./Navbar";
+import {Input} from 'antd';
+import { SearchOutlined } from '@ant-design/icons/lib/icons';
+
 
 const ImageBackgound = styled.div`
   background-repeat: no-repeat;
@@ -12,7 +15,7 @@ const ImageBackgound = styled.div`
 `;
 const ImgContainer = styled.div``;
 
-const SearchContainer = styled.div`
+const SearchContainer = styled.form`
   position: relative;
   text-align : center;
   top : 20%;
@@ -25,10 +28,20 @@ const Styletitle = styled.div`
   margin-bottom : 20px;
 `;
 
-const StyledInput = styled.input`
- 
+const suffix = (
+  <SearchOutlined 
+    style={
+      {
+        fontSize : 26,
+        fontWeight : 'bold',
+        cursor:'pointer'
+      }
+    }
+  />
+);
 
-`;
+
+
 
 const Header = () => {
   return (
@@ -37,10 +50,19 @@ const Header = () => {
         <Navbar />
         <SearchContainer>
           <Styletitle>Change starts here</Styletitle>
-          <div style={{display : 'flex'}}>
-            <StyledInput type='text'/>
-            <div>버트dsfsadfsaf</div>
-          </div> 
+          <Input
+          style={{
+            width : 600,
+            height: 'auto',
+            paddingTop : 22,
+            paddingBottom : 22,
+            paddingLeft : 24,
+            borderRadius : 8,
+          }}
+          size='large'
+          placeholder="Enter an adress, neighborhood, city, or ZIP code"
+          suffix={suffix}
+          />
         </SearchContainer>
       </ImageBackgound> 
     </ImgContainer>
