@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Card_Contents from './Card_Contents';
+import CardContents from './CardContents';
+import { CardData } from '../dummy/CardData';
 
 const ContentsLayout = styled.div`
   background-color: #f9f9fb;
@@ -21,7 +22,14 @@ const StyleContainer = styled.div`
   flex-direction : column;
   align-items : center;
 `;
+const StyleCardContainer = styled.div`
+  display :flex;
+  margin : auto;
+  max-width : 1200px;
+  width: 100%;
+  justify-content :space-between;
 
+`;
 const Contents = () => {
   return (
     <ContentsLayout>
@@ -30,7 +38,20 @@ const Contents = () => {
           Whether you're buying, selling or renting, we can help you move
           forward
         </StyleDiv>
-        <Card_Contents></Card_Contents>
+        <StyleCardContainer>
+          {
+            CardData.map((item) => (
+              <CardContents 
+                key={item.id}
+                imgSource={item.imgSource}
+                title={item.title}
+                buttonName={item.buttonName}
+                description={item.description}
+              />
+            ))
+          }
+          
+        </StyleCardContainer>
       </StyleContainer>
     </ContentsLayout>
   );
