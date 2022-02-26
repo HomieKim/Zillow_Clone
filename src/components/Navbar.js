@@ -16,6 +16,9 @@ const SytleInnerContainer = styled.div`
   overflow : visible;
   width : 100%;
   max-width : 1280px;
+  img {
+    cursor: pointer;
+  }
 `
 
 const StyleList = styled.ul`
