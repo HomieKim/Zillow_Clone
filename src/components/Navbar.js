@@ -30,6 +30,9 @@ const StyleList = styled.ul`
     padding : 1.3rem;
     color : #393e46;
     cursor: pointer;
+    :hover {
+      color : blue;
+    }
   }
 
 `
