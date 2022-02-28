@@ -3,10 +3,11 @@ import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTiktok, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import {ReactComponent as House} from '../dummy/equal-housing.svg';
+import footerImg from '../dummy/footerImg.PNG';
 const StyleDiv = styled.div`
   margin : auto;
   text-align : center;
-  padding : 24px 0;
+  padding-top : 24px;
   color: #54545A;
   font-size : 12px;
   p{
@@ -31,6 +32,7 @@ const StyleIcon = styled(FontAwesomeIcon)`
   height : 32px;
   vertical-align : bottom;
   margin-left: 10px;
+  cursor: pointer;
 `
 
 const Contact = () => {
@@ -80,7 +82,10 @@ const Contact = () => {
           
         </span>
         <span style={{margin: '0 8px', fontStyle:'italic', fontSize :14}}>© 2006-2022 Zillow</span>
-        <House />
+        <House style={{verticalAlign : 'bottom' ,cursor:'pointer'}}/>
+        <div style={{marginTop: 60}}>
+          <img src={footerImg} alt='footer'></img>
+        </div>
       </div>
     </StyleDiv>
   );

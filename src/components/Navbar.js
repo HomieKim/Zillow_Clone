@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import NavData from './NavData';
 
 const NavbarConatiner = styled.nav`
   width : 100%;
@@ -38,16 +39,47 @@ const StyleList = styled.ul`
 `
 
 const Navbar = () => {
+  const [isHover, setIsHover] = useState(false);
+  const [listValue, setListValue] = useState('');
+  const hoverHandler = (e) => {
+    setIsHover(true);
+    setListValue(e.target.innerText);
+  };
   return (
     <NavbarConatiner>
       <SytleInnerContainer>
       <div>
         <StyleList >
-          <li>Buy</li>
-          <li>Rent</li>
-          <li>Sell</li>
-          <li>Home Loans</li>
-          <li>Agent finder</li>
+          <li
+          onMouseEnter={hoverHandler}
+          onMouseLeave={()=> setIsHover(false)}
+          >
+            Buy
+          </li>
+          <li
+          onMouseEnter={hoverHandler}
+          onMouseLeave={()=> setIsHover(false)}
+          >
+            Rent
+          </li>
+          <li
+          onMouseEnter={hoverHandler}
+          onMouseLeave={()=> setIsHover(false)}
+          >
+            Sell
+          </li>
+          <li
+          onMouseEnter={hoverHandler}
+          onMouseLeave={()=> setIsHover(false)}
+          >
+            Home Loans
+          </li>
+          <li
+          onMouseEnter={hoverHandler}
+          onMouseLeave={()=> setIsHover(false)}
+          >
+            Agent finder
+          </li>
         </StyleList>
       </div>
       <div >
@@ -66,6 +98,9 @@ const Navbar = () => {
         </StyleList>
       </div>
       </SytleInnerContainer>
+      {
+        isHover && <NavData listValue={listValue}/>
+      }
     </NavbarConatiner>
   );
 }
