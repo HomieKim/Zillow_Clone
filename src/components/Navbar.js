@@ -3,12 +3,15 @@ import styled from '@emotion/styled';
 import NavData from './NavData';
 
 const NavbarConatiner = styled.nav`
+ position : relative;
+  z-index :3;
   width : 100%;
   margin : auto;
   background-color : white;
 `;
 
 const SytleInnerContainer = styled.div`
+ 
   display : flex;
   justify-content : space-between;
   height :  80px;
@@ -99,7 +102,7 @@ const Navbar = () => {
       </div>
       </SytleInnerContainer>
       {
-        isHover && <NavData listValue={listValue}/>
+        true && <NavData listValue={listValue}/>
       }
     </NavbarConatiner>
   );

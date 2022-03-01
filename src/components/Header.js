@@ -16,9 +16,13 @@ const ImageBackgound = styled.div`
 const ImgContainer = styled.div``;
 
 const SearchContainer = styled.form`
-  position: relative;
+  position: absolute;
+  width : 100%;
+  z-index : 0;
   text-align : center;
-  top : 20%;
+  margin : auto;
+  top : 200px;
+
 `;
 
 const Styletitle = styled.div`
@@ -40,9 +44,6 @@ const suffix = (
   />
 );
 
-
-
-
 const Header = () => {
   return (
     <ImgContainer>
@@ -58,7 +59,7 @@ const Header = () => {
             paddingBottom : 22,
             paddingLeft : 24,
             borderRadius : 8,
-          }}
+          }}        
           size='large'
           placeholder="Enter an adress, neighborhood, city, or ZIP code"
           suffix={suffix}

@@ -65,7 +65,14 @@ export const NavbarData = {
       data : ['Agent advertising', 'Agent resource center', 'Create a free agent account', 'Real estate business plan', 'Real estate agent scripts', 'Listing flyer templates']
     } 
   ],
-  'Manage Rentals' : {
-
-  }
+  'Manage Rentals' : [
+    {
+      title : 'Rental Management Tools',
+      data : ['List a rental', 'My Listings', 'Messages', 'Applications', 'Leases', 'Payments']
+    },
+    {
+      title : 'Learn More',
+      data : ['Zillow Rental Manger', 'Price My Rental', 'Resource Center', 'Help Center']
+    }
+  ]
 };
