@@ -15,6 +15,27 @@ const StyleCard = styled(Card)`
   img {
     margin-top : 16px;
   }
+  @media screen and (max-width : 1024px){
+    display : flex;
+    width : 647px;
+    height : 252px;
+    justify-content : space-between;
+    padding : 0 24px;
+    margin-bottom : 24px;
+    img {
+      margin-top : 36px;
+      width : 310px;
+    }
+    @media screen and (max-width : 768px){
+      display : block;
+      width : 457px;
+      height : 480px;
+      img {
+        width : 100%;
+        height : 100%;
+      }
+    }
+  }
   
 `
 const StyleDiv = styled.div`
@@ -34,6 +55,11 @@ const StyleDiv = styled.div`
     text-transform: none;
     color: rgb(42, 42, 51);
   }
+  @media screen and (max-width : 1024px){
+    margin : 0;
+    text-align : left;
+  }
+ 
 `;
 
 const StyleButton = styled(Button)`

@@ -5,6 +5,7 @@ import { Button } from 'antd';
 import FooterInfoList from './FooterInfoList';
 import Contact from './Contact';
 import { FooterData } from '../dummy/FooterData';
+import { useMediaQuery } from 'react-responsive';
 
 const StyleListContainer = styled.div`
     margin: auto;
@@ -16,6 +17,7 @@ const StyleListContainer = styled.div`
     text-align : center;
     max-width : 1280px;
     text-align : center;
+    
 `
 const StyleUnorderList = styled.ul`
   list-style : none;
@@ -33,8 +35,15 @@ const StyleUnorderList = styled.ul`
       cursor: pointer;
       margin-right : 10px;
     }
+   
   }
   justify-content : space-evenly;
+  @media screen and (max-width : 1024px) {
+    display : grid;
+    grid-template-columns : 1fr 1fr;
+    text-align : left;
+    
+  }
 `;
 const StyleSection = styled.div`
     width : 1px;
@@ -47,11 +56,15 @@ const ButtonWrapper = styled.section`
     padding-left:24px;
     text-align: center;
     width : auto;
-  :hover {
-    span {
-      text-decoration : underline;
+    
+    :hover {
+      span {
+        text-decoration : underline;
+      }
     }
-  }
+    @media screen and (max-width : 1024px) {
+        text-align : left;
+    }
 ` 
 const InnerUnorderList = styled.ul`
   list-style : none;
@@ -64,10 +77,15 @@ const InnerUnorderList = styled.ul`
     color : #1890ff;
     margin-bottom : 8px;
   }
+  @media screen and (max-width : 1024px) {
+      text-align : left;
+      padding-left : 24px;
+    }
 `
 const ListWrapper = styled.div`
   width: 100%;
   height: auto;
+  
 `
 const Footer =() =>{
 
@@ -88,13 +106,16 @@ const Footer =() =>{
     }
   }
   const Data = FooterData;
+  const isPc = useMediaQuery({
+    query : '(min-width: 1025px)'
+  })
   return (
     <>
       <StyleListContainer>
         <StyleUnorderList>
           <ListWrapper>
           <li>
-            <ButtonWrapper onClick={()=>clickHandler('Real Estate')}>
+            <ButtonWrapper  onClick={()=>clickHandler('Real Estate')}>
             <span>Real Estate</span>
             <Button size='large' type='link' icon={<DownOutlined/>}></Button>
             </ButtonWrapper>
@@ -106,7 +127,9 @@ const Footer =() =>{
               </InnerUnorderList>}
           </li>
           </ListWrapper>
-          <StyleSection></StyleSection>
+          {
+            isPc && <StyleSection></StyleSection>
+          }
           <ListWrapper>
           <li>
           <ButtonWrapper onClick={()=>clickHandler('Rentals')}>
@@ -121,7 +144,9 @@ const Footer =() =>{
               </InnerUnorderList>}
           </li>
           </ListWrapper>
-          <StyleSection></StyleSection>
+          {
+            isPc && <StyleSection></StyleSection>
+          }
           <ListWrapper>
           <li> 
           <ButtonWrapper onClick={()=>clickHandler('Mortgage Rates')}>
@@ -136,7 +161,9 @@ const Footer =() =>{
               </InnerUnorderList>}
           </li>
           </ListWrapper>
-          <StyleSection></StyleSection>
+          {
+            isPc && <StyleSection></StyleSection>
+          }
           <ListWrapper>
           <li>
           <ButtonWrapper onClick={()=>clickHandler('Browse Homes')}>

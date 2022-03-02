@@ -28,6 +28,11 @@ const StyleCardContainer = styled.div`
   max-width : 1200px;
   width: 100%;
   justify-content :space-between;
+  @media screen and (max-width : 1024px){
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+  }
 
 `;
 const Contents = () => {

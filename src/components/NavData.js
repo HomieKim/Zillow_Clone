@@ -18,7 +18,7 @@ const StyleDiv = styled.div`
 
 const SytleOuterList = styled.li`
   width :  ${(props) => (props.title ==='Home Loans' ? '20%' : props.title ==='Rent' ? '20%' : '25%')};
-  :first-child{
+  :first-of-type{
     padding-right : 24px;
   }
   & + &{
@@ -50,13 +50,13 @@ const NavData = ({ listValue }) => {
       <StyleDiv>
         <StyleOuterUnorderList>
           {
-            data.map((item) => (
-              <SytleOuterList title={listValue}>
+            data.map((item, idx) => (
+              <SytleOuterList key={idx} title={listValue}>
                 <h3>{item.title}</h3>
                 <StyleInnerUndorderList title={listValue}>
                   {
-                    item.data.map((item) => (
-                      <StyleInnerList>{item}</StyleInnerList>
+                    item.data.map((item, idx) => (
+                      <StyleInnerList key={idx}>{item}</StyleInnerList>
                     ))
                   }
                 </StyleInnerUndorderList>

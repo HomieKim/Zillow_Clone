@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 import Navbar from "./Navbar";
 import {Input} from 'antd';
 import { SearchOutlined } from '@ant-design/icons/lib/icons';
+import { useMediaQuery } from 'react-responsive';
+import ResponsiveNavBar from './ResponsiveNavBar';
 
 
 const ImageBackgound = styled.div`
@@ -44,11 +46,18 @@ const suffix = (
   />
 );
 
-const Header = () => {
+const Header = ({handleChangeView}) => {
+  const isPc = useMediaQuery({
+    query : '(min-width: 1025px)'
+  });
+  const isTablet = useMediaQuery({
+    query : '(max-width: 1024px)'
+  });
   return (
     <ImgContainer>
       <ImageBackgound>
-        <Navbar />
+        {isPc && <Navbar />}
+        {isTablet && <ResponsiveNavBar handleChangeView={handleChangeView} />}
         <SearchContainer>
           <Styletitle>Change starts here</Styletitle>
           <Input
