@@ -102,7 +102,7 @@ const Navbar = () => {
       </div>
       </SytleInnerContainer>
       {
-        true && <NavData listValue={listValue}/>
+        isHover && <NavData listValue={listValue}/>
       }
     </NavbarConatiner>
   );

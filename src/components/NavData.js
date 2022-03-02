@@ -17,7 +17,7 @@ const StyleDiv = styled.div`
 `;
 
 const SytleOuterList = styled.li`
-  width : 25%;
+  width :  ${(props) => (props.title ==='Home Loans' ? '20%' : props.title ==='Rent' ? '20%' : '25%')};
   :first-child{
     padding-right : 24px;
   }
@@ -39,7 +39,8 @@ const StyleInnerList = styled.li`
   display : flex;
   padding : 12px 12px 12px 0px;
   cursor: pointer;
-  
+  color : rgb(0, 106, 255);
+
 `
 const NavData = ({ listValue }) => {
   const data = NavbarData[listValue];
@@ -50,7 +51,7 @@ const NavData = ({ listValue }) => {
         <StyleOuterUnorderList>
           {
             data.map((item) => (
-              <SytleOuterList>
+              <SytleOuterList title={listValue}>
                 <h3>{item.title}</h3>
                 <StyleInnerUndorderList title={listValue}>
                   {
