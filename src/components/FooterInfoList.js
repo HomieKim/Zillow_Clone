@@ -14,6 +14,7 @@ const StyleFooterInfo = styled.div`
 const StyleFooterList = styled.ul`
   display : flex;
   list-style : none;
+  flex-wrap : wrap;
   justify-content : space-evenly;
   li {
     font-size : 14px;

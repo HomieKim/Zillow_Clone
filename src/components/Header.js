@@ -53,6 +53,9 @@ const Header = ({handleChangeView}) => {
   const isTablet = useMediaQuery({
     query : '(max-width: 1024px)'
   });
+  const isMobile = useMediaQuery({
+    query : '(max-width : 768px)'
+  })
   return (
     <ImgContainer>
       <ImageBackgound>
@@ -62,7 +65,7 @@ const Header = ({handleChangeView}) => {
           <Styletitle>Change starts here</Styletitle>
           <Input
           style={{
-            width : 600,
+            width : isMobile ? 400 : 600,
             height: 'auto',
             paddingTop : 22,
             paddingBottom : 22,
