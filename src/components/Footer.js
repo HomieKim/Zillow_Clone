@@ -80,7 +80,7 @@ const InnerUnorderList = styled.ul`
   @media screen and (max-width : 1024px) {
       text-align : left;
       padding-left : 24px;
-    }
+  }
 `
 const ListWrapper = styled.div`
   width: 100%;
